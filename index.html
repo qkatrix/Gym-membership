@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sporta Zāles Abonements</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💪 Sporta Zāles Abonements</h1>
+            <p>Izvēlieties abonementa periodu un uzziniet cenu!</p>
+        </header>
+
+        <section class="info-box">
+            <h2>📋 Par mums</h2>
+            <p>
+                Mūsu sporta zāle piedāvā modernas iekārtas, profesionālus trenerus un draudzīgu vidi. 
+                Izvēlieties abonementa periodu, kas atbilst jūsu vajadzībām, un saņemiet lieliskas 
+                atlaides par ilgākiem periodiem!
+            </p>
+        </section>
+
+        <section class="pricing-section">
+            <h2>💳 Abonements</h2>
+            <div class="form-group">
+                <label for="months">📅 Izvēlieties mēnešu skaitu:</label>
+                <select id="months">
+                    <option value="1">1 mēnesis - 25 EUR</option>
+                    <option value="3">3 mēneši - 70 EUR</option>
+                    <option value="6">6 mēneši - 130 EUR</option>
+                    <option value="12">12 mēneši - 240 EUR</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="quantity">🔢 Cik abonementi?</label>
+                <input type="number" id="quantity" min="1" max="10" value="1">
+                <div class="error-message" id="quantityError"></div>
+            </div>
+
+            <div class="discount-section">
+                <h3>🎁 Pieejamās atlaides:</h3>
+                <label class="checkbox-label">
+                    <input type="checkbox" id="studentDiscount">
+                    <span>Studentu atlaide (-10%)</span>
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" id="groupDiscount">
+                    <span>Grupu atlaide (3+ abonementi -15%)</span>
+                </label>
+            </div>
+
+            <button id="calculateBtn" class="btn-calculate">📊 Aprēķināt cenu</button>
+
+            <div class="result-section" id="resultSection" style="display: none;">
+                <h2>📈 Cenas aprēķins</h2>
+                <div class="calculation-details">
+                    <div class="detail-row">
+                        <span>Bāzes cena:</span>
+                        <span id="basePrice" class="price">0 EUR</span>
+                    </div>
+                    <div class="detail-row">
+                        <span>Daudzums:</span>
+                        <span id="totalQuantity">0</span>
+                    </div>
+                    <div class="detail-row" id="discountRow" style="display: none;">
+                        <span>Atlaides:</span>
+                        <span id="discountAmount" class="discount">-0 EUR</span>
+                    </div>
+                    <div class="detail-row final">
+                        <span>💰 Galīgā cena:</span>
+                        <span id="finalPrice" class="final-price">0 EUR</span>
+                    </div>
+                </div>
+                <div class="success-message" id="successMessage"></div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
